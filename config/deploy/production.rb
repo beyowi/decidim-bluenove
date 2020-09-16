@@ -7,6 +7,9 @@
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
+server ENV["PROD_SERVER_ADDRESS_FRONT_1"], user: ENV["PROD_SERVER_USER"], roles: %w{web app db}
+server ENV["PROD_SERVER_ADDRESS_FRONT_2"], user: ENV["PROD_SERVER_USER"], roles: %w{web app db}
+server ENV["PROD_SERVER_ADDRESS_FRONT_3"], user: ENV["PROD_SERVER_USER"], roles: %w{web app db}
 
 
 # role-based syntax
@@ -31,7 +34,8 @@
 # http://capistranorb.com/documentation/getting-started/configuration/
 # Feel free to add new variables to customise your setup.
 
-
+set :branch,       'master'
+set :git_branch,   fetch(:branch)
 
 # Custom SSH Options
 # ==================
