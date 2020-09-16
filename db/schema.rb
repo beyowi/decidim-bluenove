@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
 
-  create_table "decidim_accountability_results", id: :serial, force: :cascade do |t|
+  create_table "decidim_accountability_results", id: :integer, default: nil, force: :cascade do |t|
     t.jsonb "title"
     t.jsonb "description"
     t.string "reference"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["parent_id"], name: "decidim_accountability_results_on_parent_id"
   end
 
-  create_table "decidim_accountability_statuses", id: :serial, force: :cascade do |t|
+  create_table "decidim_accountability_statuses", id: :integer, default: nil, force: :cascade do |t|
     t.string "key"
     t.jsonb "name"
     t.integer "decidim_component_id"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["decidim_component_id"], name: "index_decidim_accountability_statuses_on_decidim_component_id"
   end
 
-  create_table "decidim_accountability_timeline_entries", id: :serial, force: :cascade do |t|
+  create_table "decidim_accountability_timeline_entries", id: :integer, default: nil, force: :cascade do |t|
     t.date "entry_date"
     t.jsonb "description"
     t.integer "decidim_accountability_result_id"
@@ -122,7 +122,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["decidim_organization_id"], name: "index_decidim_areas_on_decidim_organization_id"
   end
 
-  create_table "decidim_assemblies", id: :serial, force: :cascade do |t|
+  create_table "decidim_assemblies", id: :integer, default: nil, force: :cascade do |t|
     t.string "slug", null: false
     t.string "hashtag"
     t.integer "decidim_organization_id"
@@ -230,7 +230,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["collection_for_type", "collection_for_id"], name: "decidim_attachment_collections_collection_for_id_and_type"
   end
 
-  create_table "decidim_attachments", id: :serial, force: :cascade do |t|
+  create_table "decidim_attachments", id: :integer, default: nil, force: :cascade do |t|
     t.jsonb "title", null: false
     t.jsonb "description"
     t.string "file", null: false
@@ -246,7 +246,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["attachment_collection_id"], name: "index_decidim_attachments_on_attachment_collection_id"
   end
 
-  create_table "decidim_authorizations", id: :serial, force: :cascade do |t|
+  create_table "decidim_authorizations", id: :integer, default: nil, force: :cascade do |t|
     t.string "name", null: false
     t.jsonb "metadata"
     t.integer "decidim_user_id", null: false
@@ -261,7 +261,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["unique_id"], name: "index_decidim_authorizations_on_unique_id"
   end
 
-  create_table "decidim_blogs_posts", id: :serial, force: :cascade do |t|
+  create_table "decidim_blogs_posts", id: :integer, default: nil, force: :cascade do |t|
     t.jsonb "title"
     t.jsonb "body"
     t.integer "decidim_component_id"
@@ -276,7 +276,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["decidim_user_group_id"], name: "index_decidim_blogs_posts_on_decidim_user_group_id"
   end
 
-  create_table "decidim_budgets_line_items", id: :serial, force: :cascade do |t|
+  create_table "decidim_budgets_line_items", id: :integer, default: nil, force: :cascade do |t|
     t.integer "decidim_order_id"
     t.integer "decidim_project_id"
     t.index ["decidim_order_id", "decidim_project_id"], name: "decidim_budgets_line_items_order_project_unique", unique: true
@@ -284,7 +284,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["decidim_project_id"], name: "index_decidim_budgets_line_items_on_decidim_project_id"
   end
 
-  create_table "decidim_budgets_orders", id: :serial, force: :cascade do |t|
+  create_table "decidim_budgets_orders", id: :integer, default: nil, force: :cascade do |t|
     t.integer "decidim_user_id"
     t.integer "decidim_component_id"
     t.datetime "checked_out_at"
@@ -295,7 +295,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["decidim_user_id"], name: "index_decidim_budgets_orders_on_decidim_user_id"
   end
 
-  create_table "decidim_budgets_projects", id: :serial, force: :cascade do |t|
+  create_table "decidim_budgets_projects", id: :integer, default: nil, force: :cascade do |t|
     t.jsonb "title"
     t.jsonb "description"
     t.bigint "budget", null: false
@@ -308,7 +308,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["decidim_scope_id"], name: "index_decidim_budgets_projects_on_decidim_scope_id"
   end
 
-  create_table "decidim_categories", id: :serial, force: :cascade do |t|
+  create_table "decidim_categories", id: :integer, default: nil, force: :cascade do |t|
     t.jsonb "name", null: false
     t.jsonb "description", null: false
     t.integer "parent_id"
@@ -342,7 +342,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["decidim_user_group_id"], name: "index_user_group_on_coauthorsihp"
   end
 
-  create_table "decidim_comments_comment_votes", id: :serial, force: :cascade do |t|
+  create_table "decidim_comments_comment_votes", id: :integer, default: nil, force: :cascade do |t|
     t.integer "weight", null: false
     t.integer "decidim_comment_id", null: false
     t.integer "decidim_author_id", null: false
@@ -355,7 +355,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["decidim_comment_id"], name: "decidim_comments_comment_vote_comment"
   end
 
-  create_table "decidim_comments_comments", id: :serial, force: :cascade do |t|
+  create_table "decidim_comments_comments", id: :integer, default: nil, force: :cascade do |t|
     t.text "body", null: false
     t.string "decidim_commentable_type", null: false
     t.integer "decidim_commentable_id", null: false
@@ -376,7 +376,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["decidim_user_group_id"], name: "index_decidim_comments_comments_on_decidim_user_group_id"
   end
 
-  create_table "decidim_components", id: :serial, force: :cascade do |t|
+  create_table "decidim_components", id: :integer, default: nil, force: :cascade do |t|
     t.string "manifest_name"
     t.jsonb "name"
     t.integer "participatory_space_id", null: false
@@ -414,7 +414,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["section_id"], name: "index_decidim_contextual_help_sections_on_section_id"
   end
 
-  create_table "decidim_debates_debates", id: :serial, force: :cascade do |t|
+  create_table "decidim_debates_debates", id: :integer, default: nil, force: :cascade do |t|
     t.jsonb "title"
     t.jsonb "description"
     t.jsonb "instructions"
@@ -477,7 +477,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["decidim_question_id"], name: "index_decidim_forms_answer_options_question_id"
   end
 
-  create_table "decidim_forms_answers", id: :serial, force: :cascade do |t|
+  create_table "decidim_forms_answers", id: :integer, default: nil, force: :cascade do |t|
     t.text "body"
     t.integer "decidim_user_id"
     t.integer "decidim_questionnaire_id"
@@ -501,7 +501,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["position"], name: "index_decidim_forms_question_matrix_rows_on_position"
   end
 
-  create_table "decidim_forms_questionnaires", id: :serial, force: :cascade do |t|
+  create_table "decidim_forms_questionnaires", id: :integer, default: nil, force: :cascade do |t|
     t.jsonb "title"
     t.jsonb "description"
     t.jsonb "tos"
@@ -513,7 +513,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["questionnaire_for_type", "questionnaire_for_id"], name: "index_decidim_forms_questionnaires_questionnaire_for"
   end
 
-  create_table "decidim_forms_questions", id: :serial, force: :cascade do |t|
+  create_table "decidim_forms_questions", id: :integer, default: nil, force: :cascade do |t|
     t.integer "decidim_questionnaire_id"
     t.integer "position"
     t.string "question_type"
@@ -543,7 +543,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["name"], name: "index_decidim_hashtags_on_name"
   end
 
-  create_table "decidim_identities", id: :serial, force: :cascade do |t|
+  create_table "decidim_identities", id: :integer, default: nil, force: :cascade do |t|
     t.string "provider", null: false
     t.string "uid", null: false
     t.integer "decidim_user_id", null: false
@@ -602,7 +602,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["decidim_user_id"], name: "index_decidim_meetings_invites_on_decidim_user_id"
   end
 
-  create_table "decidim_meetings_meetings", id: :serial, force: :cascade do |t|
+  create_table "decidim_meetings_meetings", id: :integer, default: nil, force: :cascade do |t|
     t.jsonb "title"
     t.jsonb "description"
     t.datetime "start_time"
@@ -717,7 +717,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["related_object_type", "related_object_id"], name: "index_metric_on_related_object_id_and_type"
   end
 
-  create_table "decidim_moderations", id: :serial, force: :cascade do |t|
+  create_table "decidim_moderations", id: :integer, default: nil, force: :cascade do |t|
     t.integer "decidim_participatory_space_id", null: false
     t.string "decidim_reportable_type", null: false
     t.integer "decidim_reportable_id", null: false
@@ -732,7 +732,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["report_count"], name: "decidim_moderations_report_count"
   end
 
-  create_table "decidim_newsletters", id: :serial, force: :cascade do |t|
+  create_table "decidim_newsletters", id: :integer, default: nil, force: :cascade do |t|
     t.jsonb "subject"
     t.integer "organization_id"
     t.integer "author_id"
@@ -759,7 +759,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["decidim_user_id"], name: "index_decidim_notifications_on_decidim_user_id"
   end
 
-  create_table "decidim_organizations", id: :serial, force: :cascade do |t|
+  create_table "decidim_organizations", id: :integer, default: nil, force: :cascade do |t|
     t.string "name", null: false
     t.string "host", null: false
     t.string "default_locale", null: false
@@ -815,7 +815,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["name"], name: "index_decidim_organizations_on_name", unique: true
   end
 
-  create_table "decidim_pages_pages", id: :serial, force: :cascade do |t|
+  create_table "decidim_pages_pages", id: :integer, default: nil, force: :cascade do |t|
     t.jsonb "body"
     t.integer "decidim_component_id"
     t.datetime "created_at", null: false
@@ -823,7 +823,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["decidim_component_id"], name: "index_decidim_pages_pages_on_decidim_component_id"
   end
 
-  create_table "decidim_participatory_process_groups", id: :serial, force: :cascade do |t|
+  create_table "decidim_participatory_process_groups", id: :integer, default: nil, force: :cascade do |t|
     t.jsonb "name", null: false
     t.jsonb "description", null: false
     t.string "hero_image"
@@ -833,7 +833,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["decidim_organization_id"], name: "decidim_participatory_process_group_organization"
   end
 
-  create_table "decidim_participatory_process_steps", id: :serial, force: :cascade do |t|
+  create_table "decidim_participatory_process_steps", id: :integer, default: nil, force: :cascade do |t|
     t.jsonb "title", null: false
     t.jsonb "description"
     t.date "start_date"
@@ -851,7 +851,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["position"], name: "index_order_by_position_for_steps"
   end
 
-  create_table "decidim_participatory_process_user_roles", id: :serial, force: :cascade do |t|
+  create_table "decidim_participatory_process_user_roles", id: :integer, default: nil, force: :cascade do |t|
     t.integer "decidim_user_id"
     t.integer "decidim_participatory_process_id"
     t.string "role"
@@ -861,7 +861,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["decidim_user_id"], name: "idx_proces_user_role_on_user_id"
   end
 
-  create_table "decidim_participatory_processes", id: :serial, force: :cascade do |t|
+  create_table "decidim_participatory_processes", id: :integer, default: nil, force: :cascade do |t|
     t.string "slug", null: false
     t.string "hashtag"
     t.integer "decidim_organization_id"
@@ -901,7 +901,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["decidim_scope_type_id"], name: "index_decidim_participatory_processes_on_decidim_scope_type_id"
   end
 
-  create_table "decidim_participatory_space_links", id: :serial, force: :cascade do |t|
+  create_table "decidim_participatory_space_links", id: :integer, default: nil, force: :cascade do |t|
     t.string "from_type", null: false
     t.integer "from_id", null: false
     t.string "to_type", null: false
@@ -990,7 +990,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["decidim_proposal_id"], name: "decidim_proposals_proposal_note_proposal"
   end
 
-  create_table "decidim_proposals_proposal_votes", id: :serial, force: :cascade do |t|
+  create_table "decidim_proposals_proposal_votes", id: :integer, default: nil, force: :cascade do |t|
     t.integer "decidim_proposal_id", null: false
     t.integer "decidim_author_id", null: false
     t.datetime "created_at", null: false
@@ -1001,7 +1001,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["decidim_proposal_id"], name: "decidim_proposals_proposal_vote_proposal"
   end
 
-  create_table "decidim_proposals_proposals", id: :serial, force: :cascade do |t|
+  create_table "decidim_proposals_proposals", id: :integer, default: nil, force: :cascade do |t|
     t.text "title", null: false
     t.text "body", null: false
     t.integer "decidim_component_id", null: false
@@ -1048,7 +1048,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["valuator_role_type", "valuator_role_id"], name: "decidim_proposals_valuation_assignment_valuator_role"
   end
 
-  create_table "decidim_reports", id: :serial, force: :cascade do |t|
+  create_table "decidim_reports", id: :integer, default: nil, force: :cascade do |t|
     t.integer "decidim_moderation_id", null: false
     t.integer "decidim_user_id", null: false
     t.string "reason", null: false
@@ -1060,7 +1060,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["decidim_user_id"], name: "decidim_reports_user"
   end
 
-  create_table "decidim_resource_links", id: :serial, force: :cascade do |t|
+  create_table "decidim_resource_links", id: :integer, default: nil, force: :cascade do |t|
     t.string "from_type", null: false
     t.integer "from_id", null: false
     t.string "to_type", null: false
@@ -1081,14 +1081,14 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["resource_type", "resource_id"], name: "index_decidim_resource_permissions_on_r_type_and_r_id", unique: true
   end
 
-  create_table "decidim_scope_types", id: :serial, force: :cascade do |t|
+  create_table "decidim_scope_types", id: :integer, default: nil, force: :cascade do |t|
     t.integer "decidim_organization_id"
     t.jsonb "name", null: false
     t.jsonb "plural", null: false
     t.index ["decidim_organization_id"], name: "index_decidim_scope_types_on_decidim_organization_id"
   end
 
-  create_table "decidim_scopes", id: :serial, force: :cascade do |t|
+  create_table "decidim_scopes", id: :integer, default: nil, force: :cascade do |t|
     t.integer "decidim_organization_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -1160,7 +1160,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["organization_id"], name: "index_decidim_static_page_topics_on_organization_id"
   end
 
-  create_table "decidim_static_pages", id: :serial, force: :cascade do |t|
+  create_table "decidim_static_pages", id: :integer, default: nil, force: :cascade do |t|
     t.jsonb "title", null: false
     t.string "slug", null: false
     t.jsonb "content", null: false
@@ -1174,14 +1174,14 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["topic_id"], name: "index_decidim_static_pages_on_topic_id"
   end
 
-  create_table "decidim_surveys_surveys", id: :serial, force: :cascade do |t|
+  create_table "decidim_surveys_surveys", id: :integer, default: nil, force: :cascade do |t|
     t.integer "decidim_component_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["decidim_component_id"], name: "index_decidim_surveys_surveys_on_decidim_component_id"
   end
 
-  create_table "decidim_system_admins", id: :serial, force: :cascade do |t|
+  create_table "decidim_system_admins", id: :integer, default: nil, force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -1196,7 +1196,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["reset_password_token"], name: "index_decidim_system_admins_on_reset_password_token", unique: true
   end
 
-  create_table "decidim_user_group_memberships", id: :serial, force: :cascade do |t|
+  create_table "decidim_user_group_memberships", id: :integer, default: nil, force: :cascade do |t|
     t.integer "decidim_user_id", null: false
     t.integer "decidim_user_group_id", null: false
     t.datetime "created_at", null: false
@@ -1209,7 +1209,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_232459) do
     t.index ["role", "decidim_user_group_id"], name: "decidim_group_membership_one_creator_per_group", unique: true, where: "((role)::text = 'creator'::text)"
   end
 
-  create_table "decidim_users", id: :serial, force: :cascade do |t|
+  create_table "decidim_users", id: :integer, default: nil, force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
