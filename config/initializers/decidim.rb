@@ -30,7 +30,9 @@ Decidim.configure do |config|
   # config.content_processors = []
 
   # Whether SSL should be enabled or not.
-  config.force_ssl = ENV['FORCE_SSL']
+  unless Rails.env.production?
+    config.force_ssl = false
+  end
 
   # Geocoder configuration
   # config.geocoder = {
