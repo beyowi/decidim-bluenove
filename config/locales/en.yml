@@ -33,3 +33,6 @@ en:
   decidim:
     accessibility:
       logo: "%{organization}'s official logo, return to homepage"
+    versions:
+      resource_version:
+        see_other_versions: see other versions

@@ -2,3 +2,6 @@ fr:
   decidim:
     accessibility:
       logo: "Logo officiel de %{organization}, retour à l'accueil"
+    versions:
+      resource_version:
+        see_other_versions: voir les autres versions
