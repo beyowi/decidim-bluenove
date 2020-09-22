@@ -1,5 +1,5 @@
 <div class="floating-helper-container" data-help-id="floating-help-<%= id %>">
-  <button class="floating-helper" id="floating-helper-tip" data-toggler=".hide" aria-expanded="false" aria_label=<%=t(".help")%> >
+  <button class="floating-helper" id="floating-helper-tip" data-toggler=".hide" aria-expanded="false" aria-label=<%=t(".help")%> >
     <div class="floating-helper__layout">
       <a href="#floating-helper-block" class="floating-helper__trigger" data-toggle="floating-helper-block floating-helper-tip">
         <div class="floating-helper__text">
@@ -23,7 +23,7 @@
         </div>
       </div>
     </div>
-    <button class="floating-helper__content-close icon--small" data-toggle="floating-helper-block floating-helper-tip" aria_label=<%=t(".close")%> >
+    <button class="floating-helper__content-close icon--small" data-toggle="floating-helper-block floating-helper-tip" aria-label=<%=t(".close")%> >
       <%= icon "x", class: "icon--small", role: "img", aria_label: t(".close") %>
     </button>
   </div>
