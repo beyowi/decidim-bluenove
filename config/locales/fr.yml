@@ -5,3 +5,6 @@ fr:
     versions:
       resource_version:
         see_other_versions: voir les autres versions
+    menu:
+      home: Journal de bord
+      processes: Thématiques

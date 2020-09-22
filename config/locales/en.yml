@@ -36,3 +36,6 @@ en:
     versions:
       resource_version:
         see_other_versions: see other versions
+    menu:
+      home: Logbook
+      processes: Themes
