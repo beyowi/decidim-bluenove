@@ -1,6 +1,26 @@
 require 'zip'
 require 'fileutils'
 
+def convert_csv_to_xlsx(input_path, output_path)
+  book = Spreadsheet::Workbook.new
+  sheet1 = book.create_worksheet
+
+  fmt = Spreadsheet::Format.new(
+    text_wrap: true,
+    horizontal_align: :center,
+    vertical_align: :center
+  )
+
+  CSV.open(input_path, 'r') do |csv|
+    csv.each_with_index do |row, i|
+      sheet1.row(i).default_format = fmt
+      sheet1.row(i).replace(row)
+    end
+  end
+
+  book.write(output_path)
+end
+
 namespace :dataexport do
   desc 'export db in CSV'
   task :full_db => :environment do
@@ -9,6 +29,9 @@ namespace :dataexport do
     folder = "export/" + dump_file_name
     input_filenames = []
     zipfile_path = folder + ".zip"
+    required_tables = ['decidim_users', 'decidim_proposals_proposals', 'decidim_components',
+      'decidim_participatory_processes', 'decidim_endorsements', 'decidim_comments_comment_votes',
+      'decidim_comments_comments']
 
     # Generate archive if not exist
     if !Pathname(zipfile_path).exist?
@@ -18,17 +41,17 @@ namespace :dataexport do
       conn = ActiveRecord::Base.connection.raw_connection
       models.map do |model_name|
         # Some tables are not containing decidim specific informations
-        if model_name.include? "decidim"
-          file = "#{model_name}.csv"
-          input_filenames << file
-          file_path = folder + "/" + file
-          File.open(file_path, 'w') do |f|
+        if required_tables.include? model_name
+          input_filenames << "#{model_name}.xls"
+          file_path = folder + "/#{model_name}"
+          File.open(file_path + '.csv', 'w') do |f|
             conn.copy_data "COPY (SELECT * FROM #{model_name}) TO STDOUT WITH (FORMAT CSV, HEADER TRUE, FORCE_QUOTE *);" do
               while line = conn.get_copy_data do
                 f.write line.force_encoding('UTF-8')
               end
             end
           end
+          convert_csv_to_xlsx(file_path + '.csv', file_path + '.xls')
         end
       end
 
