@@ -79,3 +79,5 @@ fr:
           email_outro: Vous avez reçu cette notification parce que vous êtes l'auteur de la proposition.<br><br>Participez aux débats, proposez vos idées, partagez votre expérience en réagissant sur les solutions déposées et en déposant les vôtres sur <a href="https://activateurdegalite.fr/">www.activateurdegalite.fr</a>.
         voting_enabled:
           email_outro: Vous avez reçu cette notification car vous suivez %{participatory_space_title}. Vous pouvez arrêter de recevoir des notifications en suivant le lien précédent.<br><br>Participez aux débats, proposez vos idées, partagez votre expérience en réagissant sur les solutions déposées et en déposant les vôtres sur <a href="https://activateurdegalite.fr/">www.activateurdegalite.fr</a>.
+    mailer:
+      db_dump_email: "Bonjour,\n\nVous trouverez ci-joint le dump de la database Decidim du #{when}.\n\nBonne journée!"
