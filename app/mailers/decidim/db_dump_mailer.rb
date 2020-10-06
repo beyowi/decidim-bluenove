@@ -4,6 +4,8 @@ module Decidim
   # A custom mailer for sending db dump to selected emails
   class DbDumpMailer < Decidim::ApplicationMailer
     def send_dump(file_name, file_path) # rubocop:disable Metrics/ParameterLists
+      # Need to get organization for smtp configuration
+      @organization = Decidim::Organization.find(1)
       return unless ENV["DB_DUMP_EMAILS"] && ENV["DB_DUMP_EMAILS"].split(";").size > 0
 
       attachments[file_name] = File.read(file_path)

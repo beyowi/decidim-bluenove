@@ -40,4 +40,4 @@ en:
       home: Logbook
       processes: Themes
     mailer:
-      db_dump_email: "Hi,\n\nPlease find attached the Decidim database dump of #{when}.\n\nHave a great day!"
+      db_dump_email: "Hi,\n\nPlease find attached the Decidim database dump of %{when}.\n\nHave a great day!"
