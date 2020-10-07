@@ -45,7 +45,7 @@ CarrierWave.configure do |config|
       :endpoint               => ENV['DO_ENDPOINT']
     }
     config.fog_directory  = ENV['DO_BUCKET']
-    config.fog_public = false
+    config.fog_public = true
     config.fog_attributes = { 'Cache-Control' => "max-age=#{365.day.to_i}", 'X-Content-Type-Options' => "nosniff"}
     config.enable_processing = true
   else
