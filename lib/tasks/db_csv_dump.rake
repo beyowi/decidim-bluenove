@@ -29,9 +29,8 @@ namespace :dataexport do
     folder = "export/" + dump_file_name
     input_filenames = []
     zipfile_path = folder + ".zip"
-    required_tables = ['decidim_users', 'decidim_proposals_proposals', 'decidim_components',
-      'decidim_participatory_processes', 'decidim_endorsements', 'decidim_comments_comment_votes',
-      'decidim_comments_comments']
+    required_tables = ['decidim_users', 'decidim_proposals_proposals', 'decidim_coauthorships',
+      'decidim_endorsements', 'decidim_comments_comment_votes', 'decidim_comments_comments']
 
     # Generate archive if not exist
     if !Pathname(zipfile_path).exist?
