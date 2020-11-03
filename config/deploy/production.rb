@@ -9,8 +9,6 @@
 
 server ENV["PROD_SERVER_ADDRESS_FRONT_1"], user: ENV["PROD_SERVER_USER"], roles: %w{web app db}
 server ENV["PROD_SERVER_ADDRESS_FRONT_2"], user: ENV["PROD_SERVER_USER"], roles: %w{web app db}
-server ENV["PROD_SERVER_ADDRESS_FRONT_3"], user: ENV["PROD_SERVER_USER"], roles: %w{web app db}
-
 
 # role-based syntax
 # ==================
