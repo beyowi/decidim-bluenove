@@ -2,10 +2,10 @@
 
 Decidim.configure do |config|
   # The name of the application
-  config.application_name = "Decidim-Sytral"
+  config.application_name = "Decidim"
 
   # The email that will be used as sender in all emails from Decidim
-  config.mailer_sender = "ne-pas-repondre@t6-sytral.fr"
+  config.mailer_sender = ENV['MAIL_SENDER']
 
   # Sets the list of available locales for the whole application.
   #

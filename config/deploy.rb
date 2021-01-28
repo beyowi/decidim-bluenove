@@ -4,7 +4,7 @@ lock "~> 3.14.1"
 set :rbenv_type, :user # or :system, depends on your rbenv setup
 set :rbenv_ruby, '2.6.6'
 
-set :application, "decidim-sytral"
+set :application, "decidim"
 set :repo_url, "git@github.com:beyowi/decidim-bluenove.git"
 
 set :linked_files, fetch(:linked_files, []).push('config/application.yml')
