@@ -7,8 +7,7 @@
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
-server ENV["PROD_SERVER_ADDRESS_FRONT_1"], user: ENV["PROD_SERVER_USER"], roles: %w{web app db}
-server ENV["PROD_SERVER_ADDRESS_FRONT_2"], user: ENV["PROD_SERVER_USER"], roles: %w{web app db}
+server ENV["PROD_SERVER_ADDRESS_FRONT"], user: ENV["PROD_SERVER_USER"], roles: %w{web app db}
 
 # role-based syntax
 # ==================
@@ -32,7 +31,7 @@ server ENV["PROD_SERVER_ADDRESS_FRONT_2"], user: ENV["PROD_SERVER_USER"], roles:
 # http://capistranorb.com/documentation/getting-started/configuration/
 # Feel free to add new variables to customise your setup.
 
-set :branch,       'master'
+set :branch,       'sytral-master'
 set :git_branch,   fetch(:branch)
 
 # Custom SSH Options

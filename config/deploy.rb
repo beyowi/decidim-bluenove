@@ -4,7 +4,7 @@ lock "~> 3.14.1"
 set :rbenv_type, :user # or :system, depends on your rbenv setup
 set :rbenv_ruby, '2.6.6'
 
-set :application, "decidim-bluenove"
+set :application, "decidim-sytral"
 set :repo_url, "git@github.com:beyowi/decidim-bluenove.git"
 
 set :linked_files, fetch(:linked_files, []).push('config/application.yml')
@@ -23,7 +23,7 @@ set :bundle_flags, nil
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "/home/deployer/decidim-bluenove"
+set :deploy_to, "/opt/decidim"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh

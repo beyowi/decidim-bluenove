@@ -30,7 +30,7 @@ server ENV["STAGING_SERVER_ADDRESS"], user: ENV["STAGING_SERVER_USER"], roles: %
 # http://capistranorb.com/documentation/getting-started/configuration/
 # Feel free to add new variables to customise your setup.
 
-set :branch,       'develop'
+set :branch,       'sytral-develop'
 set :git_branch,   fetch(:branch)
 
 
