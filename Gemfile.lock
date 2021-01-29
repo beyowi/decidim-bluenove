@@ -124,6 +124,7 @@ GEM
     charlock_holmes (0.7.7)
     chef-utils (16.4.41)
     childprocess (3.0.0)
+    chronic (0.10.2)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
     coffee-rails (5.0.0)
@@ -139,6 +140,7 @@ GEM
     crass (1.0.6)
     css_parser (1.7.1)
       addressable
+    daemons (1.3.1)
     date_validator (0.9.0)
       activemodel
       activesupport
@@ -341,6 +343,11 @@ GEM
     declarative-builder (0.1.0)
       declarative-option (< 0.2.0)
     declarative-option (0.1.0)
+    delayed_job (4.1.9)
+      activesupport (>= 3.0, < 6.2)
+    delayed_job_active_record (4.1.5)
+      activerecord (>= 3.0, < 6.2)
+      delayed_job (>= 3.0, < 5)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     devise (4.7.2)
@@ -570,6 +577,9 @@ GEM
     parallel (1.19.2)
     parser (2.7.1.4)
       ast (~> 2.4.1)
+    passenger (6.0.7)
+      rack
+      rake (>= 0.8.1)
     pg (1.1.4)
     pg_search (2.3.2)
       activerecord (>= 5.2)
@@ -790,6 +800,8 @@ GEM
     websocket-driver (0.7.3)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    whenever (1.0.0)
+      chronic (>= 0.6.3)
     wisper (2.0.1)
     wisper-rspec (1.1.0)
     xpath (3.2.0)
@@ -807,15 +819,18 @@ DEPENDENCIES
   capistrano-passenger (>= 0.1.1)
   capistrano-rails
   capistrano-rbenv
+  daemons (~> 1.3)
   decidim (= 0.22.0)
   decidim-comments (= 0.22.0)
   decidim-debates (= 0.22.0)
   decidim-dev (= 0.22.0)
+  delayed_job_active_record (~> 4.1)
   faker (~> 1.9)
-  figaro
+  figaro (~> 1.2)
   fog-aws
   letter_opener_web (~> 1.3)
   listen (~> 3.1)
+  passenger (~> 6.0)
   puma (>= 4.3.5)
   rubyzip (>= 1.0.0)
   spreadsheet (~> 1.2)
@@ -823,6 +838,7 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0)
   uglifier (~> 4.1)
   web-console (~> 3.5)
+  whenever
 
 RUBY VERSION
    ruby 2.6.6p146
