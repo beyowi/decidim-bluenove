@@ -1,0 +1,40 @@
+.sticky-container {
+  z-index: 1;
+}
+
+.title-bar {
+  background: #ffff !important;
+}
+
+.topbar__dropmenu a, .topbar__admin__link a {
+  font-weight: normal;
+  color: black !important;
+}
+
+.topbar__notifications .icon, .topbar__conversations .icon {
+  fill: #000;
+  opacity: .3;
+}
+
+.topbar__dropmenu > ul > li > a::after {
+  border-top-color: unset !important;
+}
+
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after {
+  border-color: #000 transparent transparent;
+}
+
+.topbar__search input, .topbar__search:not(:focus-within) button {
+    background: #5b6971;
+}
+
+.navbar {
+  background: #fff;
+
+  .main-nav__link a {
+    color: #5C6874;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
