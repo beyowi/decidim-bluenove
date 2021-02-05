@@ -34,7 +34,6 @@ fr:
         see_other_versions: voir les autres versions
     menu:
       home: Journal de bord
-      processes: Thématiques
     events:
       comments:
         comment_by_followed_user:

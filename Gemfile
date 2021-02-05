@@ -9,7 +9,7 @@ gem "figaro", "~> 1.2"
 gem "decidim-debates", "0.22.0"
 gem "decidim-comments", "0.22.0"
 gem "decidim-proposals", "0.22.0"
-#gem "decidim-questions", git: "https://github.com/beyowi/decidim-questions.git"
+gem "decidim-questions", git: "https://github.com/beyowi/decidim-questions.git", branch: "release/0.22-stable"
 gem "decidim-opinions", git: "https://github.com/beyowi/decidim-opinions.git", branch: "release/0.22-stable"
 
 gem "bootsnap", "~> 1.3"

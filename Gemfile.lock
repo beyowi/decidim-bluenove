@@ -1,9 +1,25 @@
 GIT
   remote: https://github.com/beyowi/decidim-opinions.git
-  revision: 70838d56dd603122d8316379af70298480978ded
+  revision: e295e1cbbb8a5f2b7396d1fa38156bb1bf68de4c
   branch: release/0.22-stable
   specs:
     decidim-opinions (0.22.0)
+      acts_as_list (~> 0.9)
+      cells-erb (~> 0.1.0)
+      cells-rails (~> 0.0.9)
+      decidim-comments (= 0.22.0)
+      decidim-core (= 0.22.0)
+      doc2text (~> 0.4.2)
+      kaminari (~> 1.2, >= 1.2.1)
+      ransack (~> 2.1.1)
+      redcarpet (~> 3.4)
+
+GIT
+  remote: https://github.com/beyowi/decidim-questions.git
+  revision: c14370c8cbba5271bdc439ed9b18a424b63311fe
+  branch: release/0.22-stable
+  specs:
+    decidim-questions (0.22.0)
       acts_as_list (~> 0.9)
       cells-erb (~> 0.1.0)
       cells-rails (~> 0.0.9)
@@ -842,6 +858,7 @@ DEPENDENCIES
   decidim-dev (= 0.22.0)
   decidim-opinions!
   decidim-proposals (= 0.22.0)
+  decidim-questions!
   delayed_job_active_record (~> 4.1)
   faker (~> 1.9)
   figaro (~> 1.2)
