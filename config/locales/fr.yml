@@ -1,4 +1,12 @@
 fr:
+  activemodel:
+    attributes:
+      proposal:
+        suggested_hashtags: Catégories suggérées
+      questions:
+        suggested_hashtags: Catégories suggérées
+      opinions:
+        suggested_hashtags: Catégories suggérées
   decidim:
     accessibility:
       logo: "Logo officiel de %{organization}, retour à l'accueil"
@@ -112,3 +120,20 @@ fr:
         footer_sub_hero:
           footer_sub_hero_body: Accélérons ensemble la transition inclusive de l'emploi et du travail.<br /> Partagez, débattez, témoignez.
           footer_sub_hero_headline: "Bienvenue sur la plateforme participative #%{organization}."
+    components:
+      proposals:
+        settings:
+          step:
+            suggested_hashtags: Catégories suggérées aux utilisateurs pour de nouvelles propositions
+      questions:
+        settings:
+          step:
+            suggested_hashtags: Catégories suggérées aux utilisateurs pour de nouvelles questions
+      opinions:
+        settings:
+          step:
+            suggested_hashtags: Catégories suggérées aux utilisateurs pour de nouveaux avis
+    meetings:
+      meetings:
+        show:
+          join: Participer à l'atelier
