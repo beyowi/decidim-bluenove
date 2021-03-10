@@ -3,9 +3,9 @@ fr:
     attributes:
       proposal:
         suggested_hashtags: Catégories suggérées
-      questions:
+      question:
         suggested_hashtags: Catégories suggérées
-      opinions:
+      opinion:
         suggested_hashtags: Catégories suggérées
   decidim:
     accessibility:
