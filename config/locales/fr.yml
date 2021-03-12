@@ -137,3 +137,7 @@ fr:
       meetings:
         show:
           join: Participer à l'atelier
+    devise:
+      registrations:
+        new:
+          subtitle: Inscrivez-vous pour donner votre avis, poser une question et vous inscrire aux rencontres de la concertation.
