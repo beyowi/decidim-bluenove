@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/beyowi/decidim-opinions.git
-  revision: e295e1cbbb8a5f2b7396d1fa38156bb1bf68de4c
+  revision: 2ee50d8f6e206819165d3d8191325e19c8121406
   branch: release/0.22-stable
   specs:
     decidim-opinions (0.22.0)
@@ -16,7 +16,7 @@ GIT
 
 GIT
   remote: https://github.com/beyowi/decidim-questions.git
-  revision: c14370c8cbba5271bdc439ed9b18a424b63311fe
+  revision: 3c6efd841542434981d25784fc2dc44b88e5b11a
   branch: release/0.22-stable
   specs:
     decidim-questions (0.22.0)
