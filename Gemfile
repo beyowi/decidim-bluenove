@@ -23,6 +23,8 @@ gem "fog-aws"
 gem 'rubyzip', '>= 1.0.0'
 gem 'spreadsheet', '~> 1.2'
 
+gem 'piwik_analytics', '~> 1.0.1'
+
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
 
