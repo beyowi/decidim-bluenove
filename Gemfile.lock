@@ -16,7 +16,7 @@ GIT
 
 GIT
   remote: https://github.com/beyowi/decidim-questions.git
-  revision: f4bb7852fb437f271b6efe59b0251a329f14e3eb
+  revision: 70a8e732014bfa12b692ae1c6ef7f1580c4745cc
   branch: release/0.22-stable
   specs:
     decidim-questions (0.22.0)
